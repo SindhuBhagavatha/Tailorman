@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>PPD</title>
+<link href="./semantic.min.css" rel="stylesheet" type="text/css">
+<script src="./jquery.min.js"></script>
+<script src="./semantic.min.js"></script>
+<style>
+	.dummy{
+		background-color:#000;
+		width:100%;
+		height:5%;
+	}
+	
+</style>
+</head>
+
+<body>
+<!-- Static part 
+	<div style="padding: 5px 0 0 5px; height: 140px; width: 150px;position:fixed;left:0;top:0">
+    Hi... This is Sindhu.
+    </div> -->
+	<div>
+    		<div align="center">
+        		<h2 class="massive ui center aligned icon header">
+  			<i><img src="Logo.png" alt="Tailorman" /></i>
+			</h2>
+        	</div>
+    		<div class="ui top attached tabular menu">
+			<a class="item" data-tab="sku">SKU</a>
+			<a class="item" data-tab="second">CAD</a>
+			<a class="item" data-tab="third">SCPL</a>
+			<a class="item" data-tab="fourth">Prod</a>
+		</div>
+		<div class="dummy">
+        	Hi
+        	</div>
+		<div class="ui bottom attached tab segment" data-tab="sku">
+		  	<div class="">
+				JA02343<a href="../sku_search.html"> <button class="ui mini basic button">View WO</button></a>
+			</div>
+			<div class="">
+				TR02343<a href="../sku_search.html"> <button class="ui mini basic button">View WO</button></a>
+			</div>
+			<div class="actions">
+				<a href="view_ppd.html"><div class="ui approve button">Approve</div></a>
+			</div>
+		</div>
+		<div class="ui bottom attached tab segment" data-tab="second">
+		  SKU and their statuses at CAD
+			<div class="actions">
+				<a href="view_ppd.html"><div class="ui approve button">Done</div></a>
+			</div>
+		</div>
+		<div class="ui bottom attached tab segment" data-tab="third">
+		  SKU and their statuses at SCPL
+			<div class="actions">
+				<a href="view_ppd.html"><div class="ui approve button">Done</div></a>
+			</div>
+		</div>
+		<div class="ui bottom attached tab segment" data-tab="fourth">
+		  SKU and their statuses at Prod
+			<div class="actions">
+				<a href="view_ppd.html"><div class="ui approve button">Done</div></a>
+			</div>
+		</div>
+        </div>
+	<script>
+		$('.menu .item').tab();
+	</script>
+</body>
+</html>

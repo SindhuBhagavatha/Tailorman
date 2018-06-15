@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Store ops Billing</title>
+<title>Tailorman</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    
+    <script>
+		function validate(){
+			var text_name = document.getElementById("name");
+			var text_email = document.getElementById("email");
+			var text_num = document.getElementById("phone");
+			var text_referral_code = document.getElementById("referral_code");
+			
+			var regex = /^[a-zA-Z ]{2,30}$/;
+
+    		if (regex.test(text_name.value)) {
+				alert("Name correct");
+        		//return true;
+    		}
+    		else {
+        		alert("Name has been entered worong");
+				text_name.focus();
+				return false;
+    		}
+			
+			var val = text_num.value;
+			if (/^\d{10}$/.test(val)) {
+				alert("Phone ok");
+				// value is ok, use it
+			} else {
+				alert("Invalid number; must be ten digits");
+				text_num.focus();
+				return false;
+			}
+		
+		
+		var regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+
+		// Get email parts
+			var emailParts = text_email.split('@');
+	
+		// There must be exactly 2 parts
+			if(emailParts.length !== 2) {
+				alert("Wrong number of @ signs");
+				text_email.focus();
+				return false;   
+			}
+	
+		// Name the parts
+			var emailName = emailParts[0];
+			var emailDomain = emailParts[1];
+	
+		// === Validate the parts === \\
+	
+		// Must be at least one char before @ and 3 chars after
+			if(emailName.length < 1 || emailDomain.length < 3) {
+				alert("Wrong number of characters before or after @ sign");
+				text_email.focus();
+				return false;
+			}
+	
+		// Define valid chars
+			var validChars = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','.','0','1','2','3','4','5','6','7','8','9','_','-'];
+	
+		// emailName must only include valid chars
+			for(var i = 0; i < emailName.length; i += 1) {
+				if(validChars.indexOf(emailName.charAt(i)) < 0 ) {
+					alert("Invalid character in name section");
+					text_email.focus();
+					return false;   
+				}
+			}
+		// emailDomain must only include valid chars
+			for(var j = 0; j < emailDomain.length; j += 1) {
+				if(validChars.indexOf(emailDomain.charAt(j)) < 0) {
+					alert("Invalid character in domain section");
+					text_email.focus();
+					return false;   
+			}
+		}
+	}
+	</script>
+</head>
+
+<body>
+	<h2 class="ui center aligned icon header">
+  		<i class="circular users icon"><img src="Logo.png" alt="Tailorman" /></i>
+	</h2>
+    <section id="billing">
+        <div class="ui center container aligned grid">
+            <div class="doubling six column row">
+                <div class="column">
+                    <div>Name</div>
+                    <div class="row"><input type="text" id="name"></div>
+                </div>
+                <div class="column">
+                    <div>Email</div>
+                    <div class="row"><input type="text" id="email"></div>
+                </div>
+                <div class="column">
+                    <div>Phone</div>
+                    <div class="row"><input type="text" id="phone"></div>
+                </div>
+                <div class="column">
+                    <div>Referral Code</div> 
+                    <div class="row"><input type="text" id="referral_code"></div>
+                </div>
+                <div class="column">
+                    <a href="sku_search.html"><button class="ui mini basic button" onclick="validate()">Save</button></a> 
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

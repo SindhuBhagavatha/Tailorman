@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>sku_search</title>
+<link href="./semantic.min.css" rel="stylesheet" type="text/css">
+<script src="./jquery.min.js"></script>
+<script src="./semantic.min.js"></script>
+<!--
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
+  <meta charset="utf-8">
+-->
+
+<style>
+.wjk-margin {
+  margin: 50px;
+}
+
+.wjk-margin-bottom {
+  margin-bottom: 50px;
+}
+</style>
+</head>
+<!-- Need to apply CSS! -->
+<body>
+	<div align="center">
+        		<h2 class="massive ui center aligned icon header">
+  			<i><img src="Logo.png" alt="Tailorman" /></i>
+			</h2>
+       	</div>
+        <form class="ui form">
+		<div class="field">
+            		<button class="ui mini button" id="sku">SKU</button>
+			<div class="ui modal" id="sku_modal">
+				SKU<input type="text" min="1" placeholder="Enter SKU"/>
+				<button class="ui basic button">OK</button>
+			</div>
+			<button class="ui mini button" id="qty">Quantity</button>
+			<div class="ui modal" id="qty_modal">
+				Quantity<input type="number" min="1" placeholder="Enter Quantity"/>
+				<button class="ui basic button">OK</button>
+			</div>
+			<button class="ui mini button" id="finish">Finish</button>
+			<div class="ui modal" id="finish_modal">
+				<div class="ui large buttons">
+  					<button class="ui button">Semi Finish</button>
+  					<div class="or"></div>
+  					<button class="ui button">Advance Finish</button>
+					<div class="or"></div>
+					<button class="ui button">Direct Finish</button>
+				</div>
+			</div>
+			<button class="ui mini button">Type of jacket</button>
+			<button class="ui mini button">Priority</button>
+			<button class="ui mini button">Release1</button>
+			<button class="ui mini button">Release2</button>	
+
+	<!--		<h3>Date only</h3>
+  <div class="ui calendar" id="example2">
+    <div class="ui input left icon">
+      <i class="calendar icon"></i>
+      <input type="text" placeholder="Date">
+    </div>
+  </div>
+  <br/>-->
+
+			<button class="ui calendar" id="example2">Fit-On date</button>
+			<button class="ui mini button">Delivery date</button>
+			<button class="ui mini button">Discount</button>
+			<button class="ui mini button" id="comment">Discount comment</button>
+			<div class="ui fullscreen modal" id="comment_modal">
+				<div>Give us your comment</div>
+				<textarea rows="10" cols="70"></textarea>
+				<div class="actions">
+					<div class="ui approve button">Approve</div>
+    					<div class="ui cancel button">Cancel</div>
+				</div>
+			</div>
+			<!-- Main Schedule Active -->
+  			<div class='wjk-margin-bottom'>
+    				<div class="ui slider checkbox js-main-on">
+      					<p>Higher upcharges</p>
+      					<input type="checkbox" name="newsletter"/>
+      					<label>Apply</label>
+    				</div>
+  			</div>
+			<div class='wjk-margin-bottom'>
+    				<div class="ui slider checkbox js-main-on">
+      					<p>Styling upcharges</p>
+      					<input type="checkbox" name="newsletter"/>
+      					<label>Apply</label>
+    				</div>
+  			</div>
+		</div>
+		<div class="ui center container aligned grid">
+            		<div class="doubling two column row">
+                		<div class="column">
+                    			<a href="./try.html"><button class="ui mini basic button">Back</button></a> 
+                		</div>
+                		<div class="column">
+                    			<a href="./sale_detalis.html"><button class="ui mini basic button">Sale Details</button></a> 
+                		</div>
+			</div>
+		</div>
+	</form>
+	<script>
+		$('.checkbox').checkbox();
+
+		$('.checkbox.js-main-on').checkbox('check');
+		
+		$(document).ready(function(){
+     			$('#sku').click(function(){
+        		$('#sku_modal').modal('show');    
+     		});
+     		});
+		
+		/*$('.ui.modal').modal('show');*/
+		/*$(document).ready(function(){
+     			$('#qty').click(function(){
+        			$('#modal_qty').modal('show');    
+     			});
+     		});*/
+
+		$("#qty").click(function(){
+			$('#qty_modal').modal('show');
+		});		
+
+		$(document).ready(function(){
+     			$('#finish').click(function(){
+        			$('#finish_modal').modal('show');    
+     			});
+     		});
+
+		$(document).ready(function(){
+     			$('#comment').click(function(){
+        			$('#comment_modal').modal('show');    
+     			});
+     		});
+
+		//$('.fullscreen.modal').modal('show');
+
+		$(document).ready(function(){
+			$('#example2').calendar({
+  				type: 'date'
+			});
+		});
+	</script>
+</body>
+</html>
